@@ -3,119 +3,70 @@
 
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width"/>
-		<style type="text/css">
-			body,html {
-				background:#fff;
-				font-family:"Bitstream Vera Sans","Lucida Grande",
-					"Lucida Sans Unicode",Lucidux,Verdana,Lucida,sans-serif;
-			}
-			tr.e {
-				background:#f4f4f4;
-			}
-			th,td {
-				padding:0.1em 0.5em;
-			}
-			th {
-				text-align:left;
-				font-weight:bold;
-				background:#eee;
-				border-bottom:1px solid #aaa;
-			}
-			#list {
-				border:1px solid #aaa;
-				width:100%;
-			}
-			a {
-				color:#a33;
-			}
-			a:hover {
-				color:#e33;
-			}
-		</style>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <!-- var t02_head2 -->
 
-		<title>Index of
+        <title>Index of
 <!-- var NONE -->
-			/path/to/somewhere
+            /path/to/somewhere
 <!-- var t03_head3 -->
-		</title>
+        </title>
 
-	</head>
+    </head>
 <!-- var t04_body1 -->
-	<body>
-		<h1>Index of
+    <body>
+        <div class="container">
+            <h1>Index of
 <!-- var NONE -->
-			/path/to/somewhere
+                /path/to/somewhere
 <!-- var t05_body2 -->
-		</h1>
+            </h1>
 
 <!-- var t06_list1 -->
-		<table id="list">
+            <div class="table-responsive">
+                <table class="table table-striped">
 
-			<colgroup>
-				<col />
-				<col />
-				<col />
-			</colgroup>
+                    <thead>
+                        <tr>
+                            <th><a href="?C=N&amp;O=A">File Name</a>&nbsp;<a href="?C=N&amp;O=D">&nbsp;↓&nbsp;</a></th>
+                            <th><a href="?C=S&amp;O=A">File Size</a>&nbsp;<a href="?C=S&amp;O=D">&nbsp;↓&nbsp;</a></th>
+                            <th><a href="?C=M&amp;O=A">Date</a>&nbsp;<a href="?C=M&amp;O=D">&nbsp;↓&nbsp;</a></th>
+                        </tr>
+                    </thead>
 
-			<thead>
-				<tr>
-					<th><a href="?C=N&amp;O=A">File Name</a>&nbsp;<a href="?C=N&amp;O=D">&nbsp;↓&nbsp;</a></th>
-					<th><a href="?C=S&amp;O=A">File Size</a>&nbsp;<a href="?C=S&amp;O=D">&nbsp;↓&nbsp;</a></th>
-					<th><a href="?C=M&amp;O=A">Date</a>&nbsp;<a href="?C=M&amp;O=D">&nbsp;↓&nbsp;</a></th>
-				</tr>
-			</thead>
-
-			<tbody>
+                    <tbody>
 <!-- var t_parentdir_entry -->
-				<tr class="o">
-					<td><a href="../?C=N&amp;O=A">Parent directory/</a></td>
-					<td>-</td>
-					<td>-</td>
-				</tr>
+                        <tr class="o">
+                            <td><a href="../?C=N&amp;O=A">Parent directory/</a></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
 
 <!-- var NONE -->
-				<tr class="e">
-					<td>test file 1</td>
-					<td>123kB</td>
-					<td>date</td>
-				</tr>
-				<tr class="o">
-					<td>test file 2</td>
-					<td>321MB</td>
-					<td>date</td>
-				</tr>
-				<tr class="e">
-					<td>test file 3</td>
-					<td>666</td>
-					<td>date</td>
-				</tr>
+                        <tr class="e">
+                            <td>test file 1</td>
+                            <td>123kB</td>
+                            <td>date</td>
+                        </tr>
+                        <tr class="o">
+                            <td>test file 2</td>
+                            <td>321MB</td>
+                            <td>date</td>
+                        </tr>
+                        <tr class="e">
+                            <td>test file 3</td>
+                            <td>666</td>
+                            <td>date</td>
+                        </tr>
 <!-- var t07_list2 -->
-			</tbody>
-		</table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 <!-- var t08_foot1 -->
-
-        <script>
-        (function () {
-            'use strict';
-
-            window.addEventListener('DOMContentLoaded', function () {
-                var i,
-                    links = document.querySelector('tbody').querySelectorAll('a');
-
-                /* ngfancyindex doesn't encode the URIs properly. */
-                for (i = 0; i < links.length; i += 1) {
-                    links[i].href = encodeURI(links[i].href);
-                }
-            });
-        }());
-        </script>
-
-	</body>
-
-
+    </body>
 </html>
