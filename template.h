@@ -30,7 +30,7 @@ static const u_char t05_body2[] = ""
 ;
 static const u_char t06_list1[] = ""
 "            <div class=\"table-responsive\">"
-"                <table class=\"table table-striped\">"
+"                <table class=\"table table-striped table-condensed\">"
 "\n"
 "                    <thead>"
 "                        <tr>"
