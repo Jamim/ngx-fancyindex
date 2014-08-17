@@ -98,5 +98,24 @@
 			</tbody>
 		</table>
 <!-- var t08_foot1 -->
+
+        <script>
+        (function () {
+            'use strict';
+
+            window.addEventListener('DOMContentLoaded', function () {
+                var i,
+                    links = document.querySelector('tbody').querySelectorAll('a');
+
+                /* ngfancyindex doesn't encode the URIs properly. */
+                for (i = 0; i < links.length; i += 1) {
+                    links[i].href = encodeURI(links[i].href);
+                }
+            });
+        }());
+        </script>
+
 	</body>
+
+
 </html>
