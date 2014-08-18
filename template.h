@@ -12,7 +12,7 @@ static const u_char t01_head1[] = ""
 ;
 static const u_char t02_head2[] = ""
 "\n"
-"        <title>Index of"
+"        <title>"
 ;
 static const u_char t03_head3[] = ""
 "        </title>"
@@ -23,10 +23,10 @@ static const u_char t04_body1[] = ""
 "        <div class=\"container-fluid\">"
 "            <div class=\"row\">"
 "                <div class=\"col-md-12\">"
-"                    <h1>Index of"
+"                    <p>"
 ;
 static const u_char t05_body2[] = ""
-"                    </h1>"
+"                    </p>"
 "\n"
 ;
 static const u_char t06_list1[] = ""
