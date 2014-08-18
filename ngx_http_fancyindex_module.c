@@ -51,8 +51,8 @@ typedef struct {
 } ngx_http_fancyindex_loc_conf_t;
 
 
-#define NGX_HTTP_FANCYINDEX_PREALLOCATE  50
-#define NGX_HTTP_FANCYINDEX_NAME_LEN     50
+#define NGX_HTTP_FANCYINDEX_PREALLOCATE  255
+#define NGX_HTTP_FANCYINDEX_NAME_LEN     255
 
 
 /**
