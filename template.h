@@ -23,10 +23,10 @@ static const u_char t04_body1[] = ""
 "        <div class=\"container-fluid\">"
 "            <div class=\"row\">"
 "                <div class=\"col-md-12\">"
-"                    <p>"
+"                    <h1>"
 ;
 static const u_char t05_body2[] = ""
-"                    </p>"
+"                    </h1>"
 "\n"
 ;
 static const u_char t06_list1[] = ""
