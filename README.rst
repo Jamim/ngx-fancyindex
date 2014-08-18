@@ -18,6 +18,8 @@ module allows a certain degree of customization of the generated content:
 This module is designed to work with Nginx_, a high performance open source web
 server written by `Igor Sysoev <http://sysoev.ru>`__.
 
+This fork renders directory indexes in valid HTML5, formatted using the Twitter
+Bootstrap.
 
 Requirements
 ============
