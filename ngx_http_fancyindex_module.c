@@ -596,30 +596,8 @@ make_content_buf(
         ;
 
     entry = entries.elts;
-    for (i = 0; i < entries.nelts; i++) {
-        /*
-         * Genearated table rows are as follows, unneeded whitespace
-         * is stripped out:
-         *
-         *   <tr>
-         *     <td><a href="U[?sort]">fname</a></td>
-         *     <td>size</td><td>date</td>
-         *   </tr>
-         */
-        len += ngx_sizeof_ssz("<tr><td><a href=\"")
-            + entry[i].name.len + entry[i].escape /* Escaped URL */
-            + ngx_sizeof_ssz("?C=x&amp;O=y") /* URL sorting arguments */
-            + ngx_sizeof_ssz("\">")
-            + entry[i].name.len + entry[i].utf_len
-            + alcf->name_length + ngx_sizeof_ssz("&gt;")
-            + ngx_sizeof_ssz("</a></td><td>")
-            + 20 /* File size */
-            + ngx_sizeof_ssz("</td><td>")
-            + ngx_sizeof_ssz(" 28-Sep-1970 12:00 ")
-            + ngx_sizeof_ssz("</td></tr>\n")
-            + 2 /* CR LF */
-            ;
-    }
+    for (i = 0; i < entries.nelts; i++)
+        len += entry[i].name.len + entry[i].escape + 200;
 
     if ((b = ngx_create_temp_buf(r->pool, len)) == NULL)
         return NGX_HTTP_INTERNAL_SERVER_ERROR;
