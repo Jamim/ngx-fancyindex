@@ -51,6 +51,7 @@ static const u_char t_parentdir_entry[] = ""
 static const u_char t07_list2[] = ""
 "\t\t\t\t</tbody>\n"
 "\t\t\t</table>\n"
+"\t\t\t<p class=\"small text-muted\">Powered by <a href=\"https://github.com/Jamim/ngx-fancyindex\">Fancy Index</a></p>\n"
 "\t\t</div>\n"
 ;
 static const u_char t08_foot1[] = ""
