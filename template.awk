@@ -31,6 +31,17 @@ BEGIN {
 	next;
 }
 
+$1 == "<title>" || $1 == "<h1>" || $1 == "<h2>" {
+	gsub(/\t/, "\\t");
+	print "\"" $0 "\"";
+	next;
+}
+
+$1 == "</title>" || $1 == "</h1>" || $1 == "</h2>" {
+	print "\"" $1 "\\n\"";
+	next;
+}
+
 {
 	if (!varname) next;
 	# Order matters
