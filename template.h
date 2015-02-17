@@ -4,7 +4,7 @@ static const u_char t01_head1[] = ""
 "<html lang=\"ru\">\n"
 "\t<head>\n"
 "\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
-"\t\t<link rel=\"stylesheet\" href=\"http://mim.pw/css/mim.bootstrap.min.css\" />\n"
+"\t\t<link rel=\"stylesheet\" href=\"/css/mim.bootstrap.min.css\">\n"
 ;
 static const u_char t02_head2[] = ""
 "\t\t<title>"
