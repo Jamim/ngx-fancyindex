@@ -698,22 +698,24 @@ make_content_buf(
 
     /* "Parent dir" entry, always first */
     b->last = ngx_cpymem_ssz(b->last,
-                             "<tr>"
-                             "<td><a href=\"../");
+                             "\t\t\t\t\t\t<tr>\n"
+                             "\t\t\t\t\t\t\t<td><a href=\"../");
     if (*sort_url_args) {
         b->last = ngx_cpymem(b->last,
                              sort_url_args,
                              ngx_sizeof_ssz("?C=N&amp;O=A"));
     }
     b->last = ngx_cpymem_ssz(b->last,
-                             "\">Parent directory/</a></td>"
-                             "<td>-</td>"
-                             "<td>-</td>"
-                             "</tr>");
+                             "\">../</a></td>\n"
+                             "\t\t\t\t\t\t\t<td class=\"text-right\">-</td>\n"
+                             "\t\t\t\t\t\t\t<td class=\"text-center\">-</td>\n"
+                             "\t\t\t\t\t\t</tr>\n");
 
     /* Entries for directories and files */
     for (i = 0; i < entries.nelts; i++) {
-        b->last = ngx_cpymem_ssz(b->last, "<tr><td><a href=\"");
+        b->last = ngx_cpymem_ssz(b->last,
+                                 "\t\t\t\t\t\t<tr>\n"
+                                 "\t\t\t\t\t\t\t<td><a href=\"");
 
         if (entry[i].escape) {
             ngx_fancyindex_escape_uri(b->last,
@@ -758,7 +760,9 @@ make_content_buf(
         }
 
         if (len > alcf->name_length) {
-            b->last = ngx_cpymem_ssz(last, "..&gt;</a></td><td>");
+            b->last = ngx_cpymem_ssz(last,
+                                     "..&gt;</a></td>\n"
+                                     "\t\t\t\t\t\t\t<td>\n");
 
         } else {
             if (entry[i].dir && alcf->name_length - len > 0) {
@@ -766,14 +770,16 @@ make_content_buf(
                 len++;
             }
 
-            b->last = ngx_cpymem_ssz(b->last, "</a></td><td>");
+            b->last = ngx_cpymem_ssz(b->last,
+                                     "</a></td>\n"
+                                     "\t\t\t\t\t\t\t<td class=\"text-right\">");
         }
 
         if (alcf->exact_size) {
             if (entry[i].dir) {
                 *b->last++ = '-';
             } else {
-                b->last = ngx_sprintf(b->last, "%19O", entry[i].size);
+                b->last = ngx_sprintf(b->last, "%d", entry[i].size);
             }
 
         } else {
@@ -821,12 +827,16 @@ make_content_buf(
 
         ngx_gmtime(entry[i].mtime + tp->gmtoff * 60 * alcf->localtime, &tm);
 
-        b->last = ngx_sprintf(b->last, "</td><td>%02d-%s-%d %02d:%02d</td></tr>",
-                              tm.ngx_tm_mday,
-                              months[tm.ngx_tm_mon - 1],
+        b->last = ngx_sprintf(b->last,
+                              "</td>\n"
+                              "\t\t\t\t\t\t\t<td class=\"text-center\">%d.%02d.%02d %02d:%02d:%02d</td>\n"
+                              "\t\t\t\t\t\t</tr>",
                               tm.ngx_tm_year,
+                              tm.ngx_tm_mon,
+                              tm.ngx_tm_mday,
                               tm.ngx_tm_hour,
-                              tm.ngx_tm_min);
+                              tm.ngx_tm_min,
+                              tm.ngx_tm_sec);
 
 
         *b->last++ = CR;
