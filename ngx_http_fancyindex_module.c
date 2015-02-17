@@ -421,11 +421,6 @@ make_content_buf(
     ngx_dir_t    dir;
     ngx_buf_t   *b;
 
-    static char *months[] = {
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-    };
-
     /*
      * NGX_DIR_MASK_LEN is lesser than NGX_HTTP_FANCYINDEX_PREALLOCATE
      */
