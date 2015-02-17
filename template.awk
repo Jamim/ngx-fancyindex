@@ -34,9 +34,10 @@ BEGIN {
 {
 	if (!varname) next;
 	# Order matters
-	gsub(/[\t\v\n\r\f]+/, "");
+	gsub(/[\v\n\r\f]+/, "");
 	gsub(/\\/, "\\\\");
 	gsub(/"/, "\\\"");
+	gsub(/\t/, "\\t");
 	print "\"" $0 "\\n\""
 }
 
