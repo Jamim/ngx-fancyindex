@@ -25,6 +25,8 @@ server written by `Igor Sysoev <http://sysoev.ru>`__.
 This fork renders directory indexes in valid HTML5, formatted using the Twitter
 Bootstrap.
 
+Пример использования данной версии можно увидеть `здесь <http://ensemplix.mim.pw/images/items/>`__.
+
 Requirements
 ============
 
